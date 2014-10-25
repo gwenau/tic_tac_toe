@@ -2,15 +2,20 @@
 
   def intialize(value)
     @array = value
+    @move = value
   end
 
   def new_game
     @array = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
   end
 
+  # def move(move_x)
+  #   @move = move_x
+  # end
+
   # Had to have this here to initialize the variable.
   @array = []
-
+  @move
   # Have to put new_game here to update the variable above.
   new_game
 
@@ -30,3 +35,8 @@
     print "#{ak}|" 
   end
   puts "\n-------"
+  puts "Select a square number"
+  @move = gets 
+  print "You have selected " + @move
+
+
