@@ -36,11 +36,29 @@ def x_move
   puts "\n-------"
 end
 
-x_move
-puts "Select a square number"
-@move = gets.to_i
-@array[@move-1] = "X"
+def player_1
+  x_move
+  puts "1st player select a square number"
+  @move = gets.to_i
+  @array[@move-1] = "X"
+end
+
+def player_2
+  x_move
+  puts "2nd player select a square number"
+  @move = gets.to_i
+  @array[@move-1] = "O"
+end
+
+
+player_1
+player_2
+player_1
+player_2
+player_1
+player_2
+player_1
+player_2
+player_1
 
 x_move
-
-
