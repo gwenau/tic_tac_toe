@@ -66,33 +66,32 @@ def won_x
 end
 
 def won_o
-  # if @array[0] + @array[1] + @array[2] == "OOO"
-  #   puts "Player 2 wins the game!"
-  #   exit
-  # elsif @array[3] + @array[4] + @array[5] == "OOO"
-  #   puts "Player 2 wins the game!"
-  #   exit
-  # elsif @array[6] + @array[7] + @array[8] == "OOO"
-  #   puts "Player 2 wins the game!"
-  #   exit
-  # elsif @array[0] + @array[3] + @array[6] == "OOO"
-  #   puts "Player 2 wins the game!"
-  #   exit
-  # elsif @array[1] + @array[4] + @array[7] == "OOO"
-  #   puts "Player 2 wins the game!"
-  #   exit
-  # elsif @array[2] + @array[5] + @array[8] == "OOO"
-  #   puts "Player 2 wins the game!"
-  #   exit
-  # elsif @array[0] + @array[4] + @array[8] == "OOO"
-  #   puts "Player 2 wins the game!"
-  #   exit
-  # elsif @array[2] + @array[4] + @array[6] == "OOO"
-  #   puts "Player 2 wins the game!"
-  #   exit
-  # else
-  # x_move
-  # end
+  if @array[0] + @array[1] + @array[2] == "OOO"
+    puts "Player 2 wins the game!"
+    exit
+  elsif @array[3] + @array[4] + @array[5] == "OOO"
+    puts "Player 2 wins the game!"
+    exit
+  elsif @array[6] + @array[7] + @array[8] == "OOO"
+    puts "Player 2 wins the game!"
+    exit
+  elsif @array[0] + @array[3] + @array[6] == "OOO"
+    puts "Player 2 wins the game!"
+    exit
+  elsif @array[1] + @array[4] + @array[7] == "OOO"
+    puts "Player 2 wins the game!"
+    exit
+  elsif @array[2] + @array[5] + @array[8] == "OOO"
+    puts "Player 2 wins the game!"
+    exit
+  elsif @array[0] + @array[4] + @array[8] == "OOO"
+    puts "Player 2 wins the game!"
+    exit
+  elsif @array[2] + @array[4] + @array[6] == "OOO"
+    puts "Player 2 wins the game!"
+    exit
+  else
+  end
 end
 
 def player_1
