@@ -17,6 +17,10 @@ end
 # Have to put new_game here to update the variable above.
 new_game
 
+def winning
+
+end
+
 def x_move
   puts "\n-------"
   print "|"
