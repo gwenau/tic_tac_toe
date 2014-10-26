@@ -109,13 +109,18 @@ end
 def player_1
   game_board
   puts "1st player select a square number"
-  @move = gets.to_i
-  # if @array[@move-1] == "X" || "O"
-  #   puts "Sorry that square has already been taken, please select another square"
-  # end
-  @array[@move-1] = "X"
-  won_x
-  won_o
+  gets
+  if gets = "test"
+    puts "That hit's the spot!"
+  else
+    @move = gets.to_i
+    # if @array[@move-1] == "X" || "O"
+    #   puts "Sorry that square has already been taken, please select another square"
+    # end
+    @array[@move-1] = "X"
+    won_x
+    won_o
+  end
 end
 
 def player_2
