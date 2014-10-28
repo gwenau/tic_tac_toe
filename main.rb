@@ -109,10 +109,10 @@ end
 def player_1
   game_board
   puts "1st player select a square number"
-  gets
-  if gets = "test"
-    puts "That hit's the spot!"
-  else
+  # gets
+  # if gets = "test"
+  #   puts "That hit's the spot!"
+  # else
     @move = gets.to_i
     # if @array[@move-1] == "X" || "O"
     #   puts "Sorry that square has already been taken, please select another square"
@@ -120,7 +120,7 @@ def player_1
     @array[@move-1] = "X"
     won_x
     won_o
-  end
+  # end
 end
 
 def player_2
@@ -147,3 +147,5 @@ player_2
 player_1
 
 game_board
+
+# Need a draw method after nine moves have been used up. 
