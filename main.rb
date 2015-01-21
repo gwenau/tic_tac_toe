@@ -32,78 +32,44 @@ def game_board
   puts "\n-------"
 end
 
+def player_1_win
+  puts "Player 1 wins the game!"
+end
+
+def player_2_win
+  puts "Player 2 wins the game!"
+end
+
 def won_x
-  if @array[0] + @array[1] + @array[2] == "XXX"
-    game_board
-    puts "Player 1 wins the game!"
-    exit
-  elsif @array[3] + @array[4] + @array[5] == "XXX"
-    game_board
-    puts "Player 1 wins the game!"
-    exit
-  elsif @array[6] + @array[7] + @array[8] == "XXX"
-    game_board
-    puts "Player 1 wins the game!"
-    exit
-  elsif @array[0] + @array[3] + @array[6] == "XXX"
-    game_board
-    puts "Player 1 wins the game!"
-    exit
-  elsif @array[1] + @array[4] + @array[7] == "XXX"
-    game_board
-    puts "Player 1 wins the game!"
-    exit
-  elsif @array[2] + @array[5] + @array[8] == "XXX"
-    game_board
-    puts "Player 1 wins the game!"
-    exit
-  elsif @array[0] + @array[4] + @array[8] == "XXX"
-    game_board
-    puts "Player 1 wins the game!"
-    exit
-  elsif @array[2] + @array[4] + @array[6] == "XXX"
-    game_board
-    puts "Player 1 wins the game!"
-    exit
-  else
+
+  winning_combination = [[0, 1, 2], [3, 4, 5,], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]]
+  y = @array
+
+  winning_combination.each do |wc|
+    if y[wc[0]] + y[wc[1]] + y[wc[2]] == "XXX"
+      game_board
+      player_1_win
+      exit
+    else
+    end
   end
+
 end
 
 def won_o
-  if @array[0] + @array[1] + @array[2] == "OOO"
-    game_board
-    puts "Player 2 wins the game!"
-    exit
-  elsif @array[3] + @array[4] + @array[5] == "OOO"
-    game_board
-    puts "Player 2 wins the game!"
-    exit
-  elsif @array[6] + @array[7] + @array[8] == "OOO"
-    game_board
-    puts "Player 2 wins the game!"
-    exit
-  elsif @array[0] + @array[3] + @array[6] == "OOO"
-    game_board
-    puts "Player 2 wins the game!"
-    exit
-  elsif @array[1] + @array[4] + @array[7] == "OOO"
-    game_board
-    puts "Player 2 wins the game!"
-    exit
-  elsif @array[2] + @array[5] + @array[8] == "OOO"
-    game_board
-    puts "Player 2 wins the game!"
-    exit
-  elsif @array[0] + @array[4] + @array[8] == "OOO"
-    game_board
-    puts "Player 2 wins the game!"
-    exit
-  elsif @array[2] + @array[4] + @array[6] == "OOO"
-    game_board
-    puts "Player 2 wins the game!"
-    exit
-  else
+
+  winning_combination = [[0, 1, 2], [3, 4, 5,], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]]
+  y = @array
+
+  winning_combination.each do |wc|
+    if y[wc[0]] + y[wc[1]] + y[wc[2]] == "OOO"
+      game_board
+      player_2_win
+      exit
+    else
+    end
   end
+  
 end
 
 def player_1
