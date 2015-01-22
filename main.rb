@@ -32,14 +32,6 @@ def game_board
   puts "\n-------"
 end
 
-def player_1_win
-  puts "Player 1 wins the game!"
-end
-
-def player_2_win
-  puts "Player 2 wins the game!"
-end
-
 def won_x
 
   winning_combination = [[0, 1, 2], [3, 4, 5,], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]]
@@ -48,7 +40,7 @@ def won_x
   winning_combination.each do |wc|
     if y[wc[0]] + y[wc[1]] + y[wc[2]] == "XXX"
       game_board
-      player_1_win
+      puts "Player 1 wins the game!"
       exit
     else
     end
@@ -64,7 +56,7 @@ def won_o
   winning_combination.each do |wc|
     if y[wc[0]] + y[wc[1]] + y[wc[2]] == "OOO"
       game_board
-      player_2_win
+      puts "Player 2 wins the game!"
       exit
     else
     end
