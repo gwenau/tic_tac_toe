@@ -1,6 +1,7 @@
 def intialize(value)
   @array = value
   @move = value
+  @player = value
 end
 
 def new_game
@@ -10,6 +11,12 @@ end
 # Had to have this here to initialize the variable.
 @array = []
 @move
+@player = [ "player 1", "player 2" ]
+# player_1 = {token: "X", score: 0}
+# player_2 = {token: "O", score: 0}
+# @player << player_1
+# @player << player_2
+
 # Have to put new_game here to update the variable above.
 new_game
 
@@ -64,45 +71,32 @@ def won_o
   
 end
 
-def player_1
+def player_move(player)
   game_board
-  puts "1st player select a square number"
-  # gets
-  # if gets = "test"
-  #   puts "That hit's the spot!"
-  # else
+  if player == "player 1"
+    puts "1st player select a square number"
     @move = gets.to_i
-    # if @array[@move-1] == "X" || "O"
-    #   puts "Sorry that square has already been taken, please select another square"
-    # end
     @array[@move-1] = "X"
     won_x
     won_o
-  # end
+  else
+    puts "2nd player select a square number"
+    @move = gets.to_i
+    @array[@move-1] = "O"
+    won_x
+    won_o
+  end
 end
 
-def player_2
-  game_board
-  puts "2nd player select a square number"
-  @move = gets.to_i
-  # if @array[@move-1] == "X" || "O"
-  #   puts "Sorry that square has already been taken, please select another square"
-  # end
-  @array[@move-1] = "O"
-  won_x
-  won_o
-end
-
-
-player_1
-player_2
-player_1
-player_2
-player_1
-player_2
-player_1
-player_2
-player_1
+player_move(@player[0])
+player_move(@player[1])
+player_move(@player[0])
+player_move(@player[1])
+player_move(@player[0])
+player_move(@player[1])
+player_move(@player[0])
+player_move(@player[1])
+player_move(@player[0])
 
 game_board
 
