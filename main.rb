@@ -22,50 +22,20 @@ end
 # Have to put new_game here to update the variable above.
 new_game
 
-def printPartOne
-  puts "\n-------"
-  print "|"
-end
-
-# def game_board
-#   printPartOne
-#   @array[0..2].each do |ak|
-#     print "#{ak}|"
-#   end
-#   printPartOne
-#   @array[3..5].each do |ak| 
-#     print "#{ak}|" 
-#   end
-#   printPartOne
-#   @array[6..8].each do |ak| 
-#     print "#{ak}|" 
-#   end
-#   puts "\n-------"
-# end
-
-
 def game_board
 
-  line_1 = 0..2
-  line_2 = 3..5
-  line_3 = 6..8
+  lines = [0..2, 3..5, 6..8]
 
-  printPartOne
-  @array[line_1].each do |ak|
-    print "#{ak}|"
-  end
-  printPartOne
-  @array[line_2].each do |ak| 
-    print "#{ak}|" 
-  end
-  printPartOne
-  @array[line_3].each do |ak| 
-    print "#{ak}|" 
+  lines.each do |line|
+    puts "\n-------"
+    print "|"
+    @array[line].each do |ak|
+      print "#{ak}|"
+    end
   end
   puts "\n-------"
+
 end
-
-
 
 
 def winner (player)
