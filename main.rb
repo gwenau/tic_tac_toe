@@ -1,16 +1,18 @@
-def intialize(value)
-  @array = value
-  @move = value
-  @player = value
-end
+# The below method might be needed when you are inside a Class but outside, you don't need it.
+# def intialize(value)
+#   puts "Whatever"
+#   @array = value
+#   @move = value
+#   @player = value
+# end
 
 def new_game
   @array = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
 end
 
 # Had to have this here to initialize the variable.
-@array = []
-@move
+# @array = []
+# @move
 @player = [ "player 1", "player 2" ]
 # player_1 = {token: "X", score: 0}
 # player_2 = {token: "O", score: 0}
@@ -20,24 +22,51 @@ end
 # Have to put new_game here to update the variable above.
 new_game
 
-def game_board
+def printPartOne
   puts "\n-------"
   print "|"
-  @array[0..2].each do |ak|
+end
+
+# def game_board
+#   printPartOne
+#   @array[0..2].each do |ak|
+#     print "#{ak}|"
+#   end
+#   printPartOne
+#   @array[3..5].each do |ak| 
+#     print "#{ak}|" 
+#   end
+#   printPartOne
+#   @array[6..8].each do |ak| 
+#     print "#{ak}|" 
+#   end
+#   puts "\n-------"
+# end
+
+
+def game_board
+
+  line_1 = 0..2
+  line_2 = 3..5
+  line_3 = 6..8
+
+  printPartOne
+  @array[line_1].each do |ak|
     print "#{ak}|"
   end
-  puts "\n-------"
-  print "|"
-  @array[3..5].each do |ak| 
+  printPartOne
+  @array[line_2].each do |ak| 
     print "#{ak}|" 
   end
-  puts "\n-------"
-  print "|"
-  @array[6..8].each do |ak| 
+  printPartOne
+  @array[line_3].each do |ak| 
     print "#{ak}|" 
   end
   puts "\n-------"
 end
+
+
+
 
 def winner (player)
 
