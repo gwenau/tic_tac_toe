@@ -1,10 +1,5 @@
-def new_game
-  @array = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
-end
-
+@array = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
 @player = [ "player 1", "player 2" ]
-
-new_game
 
 def game_board
   lines = [0..2, 3..5, 6..8]
@@ -50,9 +45,13 @@ def player_move(player)
   end
 end
 
-(0..1).cycle(4) do |move|
-  player_move(@player[move])
+def play_game
+  (0..1).cycle(4) do |move|
+    player_move(@player[move])
+  end
+  player_move(@player[0])
+  game_board
+  puts "Draw!"
 end
-player_move(@player[0])
-game_board
-puts "Draw!"
+
+play_game
