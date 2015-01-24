@@ -28,13 +28,18 @@ end
 def player_move(player)
   game_board
   puts "#{player}, please select a square number"
-  @move = gets.to_i
-  if player == "Player 1"
-    @array[@move-1] = "X"
+  @move = gets.chomp
+  if !@array.include?(@move) 
+    puts "Sorry, that square has already been taken, please choose another square."
+    player_move(player)
   else
-    @array[@move-1] = "O"
+    if player == "Player 1"
+      @array[@move.to_i-1] = "X"
+    else
+      @array[@move.to_i-1] = "O"
+    end
+    winner(player)
   end
-  winner(player)
 end
 
 def play_game
