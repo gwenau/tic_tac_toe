@@ -1,5 +1,5 @@
 @array = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
-@player = [ "player 1", "player 2" ]
+@player = [ "Player 1", "Player 2" ]
 
 def game_board
   lines = [0..2, 3..5, 6..8]
@@ -17,28 +17,38 @@ def winner (player)
   winning_combination = [[0, 1, 2], [3, 4, 5,], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]]
   y = @array
   winning_combination.each do |wc|
-    if y[wc[0]] + y[wc[1]] + y[wc[2]] == "XXX"
+    if (y[wc[0]] + y[wc[1]] + y[wc[2]] == "XXX") || (y[wc[0]] + y[wc[1]] + y[wc[2]] == "OOO")
       game_board
-      puts "player 1 wins the game!"
+      puts "#{player} wins the game!"
       exit
-    elsif y[wc[0]] + y[wc[1]] + y[wc[2]] == "OOO"
-      game_board
-      puts "player 2 wins the game!"
-      exit
-    else
     end
   end
 end
 
+# def player_move(player)
+#   game_board
+#   if player == "Player 1"
+#     puts "#{player}, please select a square number"
+#     @move = gets.to_i
+#     @array[@move-1] = "X"
+#     winner(player)
+#   else
+#     puts "#{player}, select a square number"
+#     @move = gets.to_i
+#     @array[@move-1] = "O"
+#     winner(player)
+#   end
+# end
+
 def player_move(player)
   game_board
-  if player == "player 1"
-    puts "1st player select a square number"
+  if player == "Player 1"
+    puts "#{player}, please select a square number"
     @move = gets.to_i
     @array[@move-1] = "X"
     winner(player)
   else
-    puts "2nd player select a square number"
+    puts "#{player}, select a square number"
     @move = gets.to_i
     @array[@move-1] = "O"
     winner(player)
