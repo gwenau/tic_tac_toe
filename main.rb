@@ -13,7 +13,7 @@ def game_board
   puts "\n-------"
 end
 
-def winner (player)
+def winner(player)
   winning_combination = [[0, 1, 2], [3, 4, 5,], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]]
   y = @array
   winning_combination.each do |wc|
@@ -25,34 +25,16 @@ def winner (player)
   end
 end
 
-# def player_move(player)
-#   game_board
-#   if player == "Player 1"
-#     puts "#{player}, please select a square number"
-#     @move = gets.to_i
-#     @array[@move-1] = "X"
-#     winner(player)
-#   else
-#     puts "#{player}, select a square number"
-#     @move = gets.to_i
-#     @array[@move-1] = "O"
-#     winner(player)
-#   end
-# end
-
 def player_move(player)
   game_board
+  puts "#{player}, please select a square number"
+  @move = gets.to_i
   if player == "Player 1"
-    puts "#{player}, please select a square number"
-    @move = gets.to_i
     @array[@move-1] = "X"
-    winner(player)
   else
-    puts "#{player}, select a square number"
-    @move = gets.to_i
     @array[@move-1] = "O"
-    winner(player)
   end
+  winner(player)
 end
 
 def play_game
