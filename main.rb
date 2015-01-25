@@ -19,7 +19,9 @@ def winner(player)
   winning_combination.each do |wc|
     if (y[wc[0]] + y[wc[1]] + y[wc[2]] == "XXX") || (y[wc[0]] + y[wc[1]] + y[wc[2]] == "OOO")
       game_board
+      player[:score] = player[:score] + 1
       puts "#{player[:player]} wins the game!"
+      score_card
       exit
     end
   end
@@ -49,6 +51,27 @@ def play_game
   player_move(@player[0])
   game_board
   puts "Draw!"
+  score_card
 end
 
+def score_card 
+  puts "SCORE: "
+  @player.each do | sc |
+    print sc[:player] 
+    print "  :  " 
+    puts sc[:score]
+  end
+end
+
+# def decide_to_play
+#   puts "Would you like to play a game? (y/n)"
+#   response = gets.chomp
+#   if reponse = "y"
+    
+#   else
+
+#   end
+# end
+
+score_card
 play_game
