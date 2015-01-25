@@ -1,5 +1,5 @@
 @array = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
-@player = [ "Player 1", "Player 2" ]
+@player = [ {player: "Player 1", score: 0}, {player: "Player 2", score: 0} ]
 
 def game_board
   lines = [0..2, 3..5, 6..8]
@@ -19,7 +19,7 @@ def winner(player)
   winning_combination.each do |wc|
     if (y[wc[0]] + y[wc[1]] + y[wc[2]] == "XXX") || (y[wc[0]] + y[wc[1]] + y[wc[2]] == "OOO")
       game_board
-      puts "#{player} wins the game!"
+      puts "#{player[:player]} wins the game!"
       exit
     end
   end
@@ -27,13 +27,13 @@ end
 
 def player_move(player)
   game_board
-  puts "#{player}, please select a square number"
+  puts "#{player[:player]}, please select a square number"
   @move = gets.chomp
   if !@array.include?(@move) 
     puts "Sorry, that square has already been taken, please choose another square."
     player_move(player)
   else
-    if player == "Player 1"
+    if player[:player] == "Player 1"
       @array[@move.to_i-1] = "X"
     else
       @array[@move.to_i-1] = "O"
