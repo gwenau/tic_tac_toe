@@ -1,5 +1,8 @@
-@array = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
 @player = [ {player: "Player 1", score: 0}, {player: "Player 2", score: 0} ]
+
+def new_game
+  @array = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
+end
 
 def game_board
   lines = [0..2, 3..5, 6..8]
@@ -22,7 +25,7 @@ def winner(player)
       player[:score] = player[:score] + 1
       puts "#{player[:player]} wins the game!"
       score_card
-      exit
+      decide_to_play
     end
   end
 end
@@ -45,6 +48,7 @@ def player_move(player)
 end
 
 def play_game
+  new_game
   (0..1).cycle(4) do |move|
     player_move(@player[move])
   end
@@ -63,15 +67,14 @@ def score_card
   end
 end
 
-# def decide_to_play
-#   puts "Would you like to play a game? (y/n)"
-#   response = gets.chomp
-#   if reponse = "y"
-    
-#   else
+def decide_to_play
+  puts "Would you like to play a game? (y/n)"
+  response = gets.chomp
+  if response == "y"
+      play_game
+  else
+      exit
+  end
+end
 
-#   end
-# end
-
-score_card
-play_game
+decide_to_play
