@@ -23,7 +23,7 @@ def winner(player)
     if (y[wc[0]] + y[wc[1]] + y[wc[2]] == "XXX") || (y[wc[0]] + y[wc[1]] + y[wc[2]] == "OOO")
       game_board
       player[:score] = player[:score] + 1
-      puts "#{player[:player]} wins the game!"
+      puts "#{player[:name]} wins the game!"
       score_card
       decide_to_play
     end
@@ -61,9 +61,9 @@ end
 def score_card 
   puts "SCORE: "
   @player.each do | sc |
-    print sc[:name] 
-    print "  :  " 
-    puts sc[:score]
+    print sc[:score]
+    print "  -  "  
+    puts sc[:name]
   end
 end
 
