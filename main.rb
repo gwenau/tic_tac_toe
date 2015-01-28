@@ -1,4 +1,4 @@
-@player = [ {player: "Player 1", score: 0}, {player: "Player 2", score: 0} ]
+@player = [ {player: "Player 1", score: 0, name: ""}, {player: "Player 2", score: 0, name: ""} ]
 
 def new_game
   @array = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
@@ -32,7 +32,7 @@ end
 
 def player_move(player)
   game_board
-  puts "#{player[:player]}, please select a square number"
+  puts "#{player[:name]}, please select a square number"
   @move = gets.chomp
   if !@array.include?(@move) 
     puts "Sorry, that square has already been taken, please choose another square."
@@ -61,7 +61,7 @@ end
 def score_card 
   puts "SCORE: "
   @player.each do | sc |
-    print sc[:player] 
+    print sc[:name] 
     print "  :  " 
     puts sc[:score]
   end
@@ -71,9 +71,16 @@ def decide_to_play
   puts "Would you like to play a game? (y/n)"
   response = gets.chomp
   if response == "y"
+      @player.each do |p|
+        if p[:name] == ""
+          puts "#{p[:player]}, please enter your name"
+          p_name = gets.chomp
+          p[:name] << p_name
+        end
+      end
       play_game
   else
-      exit
+    exit
   end
 end
 
